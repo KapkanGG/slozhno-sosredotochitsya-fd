@@ -1,3 +1,6 @@
+/*я переделал работу, даже удалял её с компа, но я не понимаю как мне убрать расстояние между title__decor и section__list подскажите пожалуйста, а то моя голова скоро лопнет уже. Я уже просто сдался, все работало, переделал как вы просили, вчё сломалось, а писать полностью новый код не могу, так как уже время другого спринта, а я просто не способен его начать. Короче жестко подкосила меня эта работа...*/
+
+
 .page {
 	background-image: var(--background-image);
 	background-color: var(--background-color);
@@ -263,7 +266,12 @@
 .footer {
 	position: relative;
 	min-height: 668px;
+	  padding: clamp(286px, calc(286px + (177 * var(--fluid-ratio-sm-md))), 463px)
+    clamp(14px, calc(14px + (190 * var(--fluid-ratio-sm-md))), 204px)
+    clamp(285px, calc(285px + (177 * var(--fluid-ratio-sm-md))), 462px)
+    clamp(13px, calc(13px + (191 * var(--fluid-ratio-sm-md))), 204px);
 }
+
 
 .footer__title {
 	text-align: center;
@@ -274,10 +282,14 @@
 	.header {
 		padding: 0 var(--space-m) 0 0;
 	}
+
+.border__setting {
+	max-height: 23px;
 }
 
 .main-title {
 	font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+	padding-top: 173px;
 }
 
 .header__description-container {
@@ -287,16 +299,7 @@
 		calc(364px + (127 * var(--fluid-ratio-md-lg))),
 		491px
 	);
-	margin-block-start: clamp(
-		114px,
-		calc(162px + ((114 - 162) * var(--fluid-ratio-md-lg))),
-		162px
-	);
-	margin-block-end: clamp(
-		134px,
-		calc(183px + ((134 - 183) * var(--fluid-ratio-md-lg))),
-		183px
-	);
+	padding: 114px 0 134px 0;
 	inline-size: 50%;
 }
 
@@ -378,8 +381,7 @@
 
 .footer {
 	min-height: 688px;
-	display: grid;
-	align-content: center;
+}
 }
 
 @media (width >= 1024px) {
@@ -398,7 +400,7 @@
 	}
 
 	.header__title {
-		margin-block-start: 273px;
+  padding-top: 273px;
 	}
 
 	.header__description-container {
